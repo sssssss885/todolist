@@ -1,9 +1,10 @@
 {{ template "header" . }}
 <h1>List of tasks</h1>
+<p><a href="/task/new">新規登録</a></p>
 {{ if not .Tasks }}
 <p>登録データがありません．</p>
 {{ else }}
-<table>
+<table border="1" width="500">
     <tr>
         <th>ID</th>
         <th>タイトル</th>
@@ -12,10 +13,10 @@
     </tr>
     {{ range $task := .Tasks }}
     <tr>
-        <td><a href="/task/{{ $task.ID }}">{{ $task.ID }}</a></td>
+        <td align="center"><a href="/task/{{ $task.ID }}">{{ $task.ID }}</a></td>
         <td>{{ $task.Title }}</td>
         <td>{{ $task.CreatedAt }}</td>
-        <td>{{ if $task.IsDone }}済{{ end }}</td>
+        <td align="center">{{ if $task.IsDone }}済{{ end }}</td>
     </tr>
     {{ end }}
 </table>
