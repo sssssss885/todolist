@@ -70,7 +70,7 @@ func main() {
 
 	engine.GET("/user/delete", service.DeleteUser)
 
-	//ユーザ名やパスワードなどのユーザ情報を変更する機能
+	
 	// start server
 	engine.Run(fmt.Sprintf(":%d", port))
 }
