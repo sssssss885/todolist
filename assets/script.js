@@ -10,3 +10,9 @@ const confirm_edit = (id) => {
         return false;
     }
 }
+
+const confirm_delete_user = () => {
+    if(window.confirm(`このユーザーを削除します. よろしいですか？`)) {
+        location.href = "/user/delete";
+    }
+}
